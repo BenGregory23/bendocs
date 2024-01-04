@@ -1,10 +1,7 @@
-import { ExternalLink } from "lucide-react";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
 } from "~/components/ui/card"
 import { Link } from "@remix-run/react"
@@ -23,7 +20,9 @@ export default function Index() {
       </h1>
 
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
-      Bienvenue sur "Docs", mon site où je partage mes expériences, mes projets, mes compétences et mes formations, en gros c'est mon portfolio.
+      Bienvenue sur <span className="
+      text-blue-500 font-bold
+      ">Docs</span>, mon site où je partage mes expériences, mes projets, mes compétences et mes formations, en gros c'est mon portfolio.
       </p>
 
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
@@ -31,7 +30,7 @@ export default function Index() {
       </p>
 
       <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none lg:max-w-prose  lg:my-10">
-        <Card className="lg:max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+        <Card className="lg:max-w-prose lg:w-64 lg:h-30 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
@@ -45,42 +44,42 @@ export default function Index() {
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose lg:w-64 lg:h-30 lg:h-30  m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
 
                 <CardTitle>Expériences</CardTitle>
                 <CardDescription>
-                  Découvrez mes expériences
+                Découvrez mes expériences
                 </CardDescription>
         
             </CardContent>
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
 
-                <CardTitle>Expériences</CardTitle>
+                <CardTitle>Projets</CardTitle>
                 <CardDescription>
-                  Découvrez mes expériences
+                  Découvrez mes projets
                 </CardDescription>
         
             </CardContent>
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
 
-                <CardTitle>Expériences</CardTitle>
+                <CardTitle>Compétences</CardTitle>
                 <CardDescription>
-                  Découvrez mes expériences
+                  Ma stack technique
                 </CardDescription>
         
             </CardContent>
