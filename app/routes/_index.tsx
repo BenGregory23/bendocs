@@ -29,7 +29,7 @@ export default function Index() {
       Ce site est aussi un projet personnel de prise en main du framework <a href="https://remix.run/" target="_blank" className="text-blue-500">Remix</a>. Pratiquant React depuis plusieurs années, et ayant déjà utilisé NextJS, j'ai décidé d'essayer Remix.
       </p>
 
-      <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none lg:max-w-prose  lg:my-10">
+      <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10">
         <Card className="lg:max-w-prose lg:w-64 lg:h-30 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
