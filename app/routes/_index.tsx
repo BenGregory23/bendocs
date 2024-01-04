@@ -1,41 +1,98 @@
-import type { MetaFunction } from "@remix-run/node";
+import { ExternalLink } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card"
+import { Link } from "@remix-run/react"
+import { Badge } from "~/components/ui/badge";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none">
+
+      <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl">
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
+        Ben GREGORY <Badge variant={"secondary"}>Docs</Badge>
+        
+      </h1>
+
+      <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+      Bienvenue sur "Docs", mon site où je partage mes expériences, mes projets, mes compétences et mes formations, en gros c'est mon portfolio.
+      </p>
+
+      <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+      Ce site est aussi un projet personnel de prise en main du framework <a href="https://remix.run/" target="_blank" className="text-blue-500">Remix</a>. Pratiquant React depuis plusieurs années, et ayant déjà utilisé NextJS, j'ai décidé d'essayer Remix.
+      </p>
+
+      <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none lg:max-w-prose  lg:my-10">
+        <Card className="lg:max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+          <Link to="/experiences">
+            <CardContent className="flex flex-col justify-center items-center p-8">
+              
+
+                <CardTitle>A propos de moi</CardTitle>
+                <CardDescription>
+                  Découvrez qui je suis
+                </CardDescription>
+        
+            </CardContent>
+          </Link>
+        </Card>
+
+        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+          <Link to="/experiences">
+            <CardContent className="flex flex-col justify-center items-center p-8">
+              
+
+                <CardTitle>Expériences</CardTitle>
+                <CardDescription>
+                  Découvrez mes expériences
+                </CardDescription>
+        
+            </CardContent>
+          </Link>
+        </Card>
+
+        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+          <Link to="/experiences">
+            <CardContent className="flex flex-col justify-center items-center p-8">
+              
+
+                <CardTitle>Expériences</CardTitle>
+                <CardDescription>
+                  Découvrez mes expériences
+                </CardDescription>
+        
+            </CardContent>
+          </Link>
+        </Card>
+
+        <Card className="max-w-prose lg:w-60 m-2 rounded-lg  hover:outline">
+          <Link to="/experiences">
+            <CardContent className="flex flex-col justify-center items-center p-8">
+              
+
+                <CardTitle>Expériences</CardTitle>
+                <CardDescription>
+                  Découvrez mes expériences
+                </CardDescription>
+        
+            </CardContent>
+          </Link>
+        </Card>
+
+
+     
+    
+      </div>
+      </div>
+      
     </div>
   );
 }
