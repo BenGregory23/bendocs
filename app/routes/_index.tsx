@@ -30,7 +30,7 @@ export default function Index() {
       </p>
 
       <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10">
-        <Card className="lg:max-w-prose lg:w-64 lg:h-30 lg:h-30 m-2 rounded-lg  hover:outline">
+        <Card className="lg:max-w-prose min-w-60  lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
@@ -44,7 +44,7 @@ export default function Index() {
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-64 lg:h-30 lg:h-30  m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose  min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
@@ -58,7 +58,7 @@ export default function Index() {
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
@@ -72,7 +72,7 @@ export default function Index() {
           </Link>
         </Card>
 
-        <Card className="max-w-prose lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
+        <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
           <Link to="/experiences">
             <CardContent className="flex flex-col justify-center items-center p-8">
               

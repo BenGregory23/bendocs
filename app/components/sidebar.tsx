@@ -2,20 +2,9 @@ import { Theme, useTheme } from "remix-themes";
 import { Button } from "~/components/ui/button";
 import { Title } from "./title";
 import { Link } from "@remix-run/react";
-import { User } from "lucide-react";
+import { Separator } from "~/components/ui/separator"
 
-import { useEffect, useState } from "react";
-
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "~/components/ui/navigation-menu";
+import { useLocation } from "@remix-run/react";
 import {
   Popover,
   PopoverContent,
@@ -23,7 +12,14 @@ import {
 } from "~/components/ui/popover";
 import { navigationMenuTriggerStyle } from "~/components/ui/navigation-menu";
 
+
+const isLinkActive = (currentPath: string, path: string) => {
+  return currentPath === path;
+}
+
 export function Sidebar() {
+  const location = useLocation();
+
   return (
     <div
       className="flex flex-col justify-between lg:min-h-screen lg:w-1/6 lg:max-w-[350px] lg:flex-shrink-0 lg:sticky lg:top-0 p-3
@@ -33,14 +29,13 @@ export function Sidebar() {
         <Link to={"/"}>
           <Title />
         </Link>
-
-        <div className="w-full">
+        <div className="w-full mb-6">
           <ul className="mt-8 space-y-2">
             <li>
               <Link to="/about">
                 <Button
                   className="w-full font-semibold text-left flex justify-start"
-                  variant={"secondary"}
+                  variant={isLinkActive(location.pathname, "/about") ? "secondary" : "ghost"}
                 >
                   {" "}
                   A Propos de moi
@@ -48,10 +43,10 @@ export function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link to="/about">
+              <Link to="/skills">
                 <Button
                   className="w-full font-semibold text-left flex justify-start"
-                  variant={"ghost"}
+                  variant={isLinkActive(location.pathname, "/skills") ? "secondary" : "ghost"}
                 >
                   {" "}
                   Compétences
@@ -62,7 +57,7 @@ export function Sidebar() {
               <Link to="/experiences">
                 <Button
                   className="w-full font-semibold text-left flex justify-start"
-                  variant={"ghost"}
+                  variant={isLinkActive(location.pathname, "/experiences") ? "secondary" : "ghost"}
                 >
                   {" "}
                   Expériences
@@ -70,10 +65,10 @@ export function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link to="/docs/projets">
+              <Link to="/projects">
                 <Button
                   className="w-full font-semibold text-left flex justify-start"
-                  variant={"ghost"}
+                  variant={isLinkActive(location.pathname, "/projects") ? "secondary" : "ghost"}
                 >
                   {" "}
                   Projets
@@ -81,10 +76,10 @@ export function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link to="/docs/formations">
+              <Link to="/formations">
                 <Button
                   className="w-full font-semibold text-left flex justify-start"
-                  variant={"ghost"}
+                  variant={isLinkActive(location.pathname, "/formations") ? "secondary" : "ghost"}
                 >
                   {" "}
                   Formations
@@ -92,7 +87,9 @@ export function Sidebar() {
               </Link>
             </li>
           </ul>
+       
         </div>
+      
       </div>
 
       <div className="mt-8 flex flex-col space-y-2">

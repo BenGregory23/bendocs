@@ -18,6 +18,10 @@ import { ModeToggle } from "./components/mode-toggle";
 import { Sidebar } from "./components/sidebar";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
+import { useRouteError } from "@remix-run/react";
+import { Button } from "./components/ui/button";
+import { Link } from "@remix-run/react";
+
 
 
 export const links: LinksFunction = () => [
@@ -43,6 +47,9 @@ export default function AppWithProviders() {
     </ThemeProvider>
   )
 }
+
+
+
 
 export function App() {
   const data = useLoaderData<typeof loader>()
@@ -73,6 +80,7 @@ export function App() {
           </div>
           <div className="w-full flex-grow">
             <Outlet />
+
           </div>
           <ScrollRestoration />
           <Scripts />
@@ -111,4 +119,86 @@ export function App() {
       </body>
     </html>
   );
+}
+
+export function ErrorBoundary() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const error = useRouteError();
+
+  useEffect(() => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      setIsSmallScreen(true)
+    }
+  }, [])
+
+  if (isSmallScreen) {
+    return (
+      <html lang="en" className="dark">
+        <head>
+          <title>Oh non !</title>
+          <Meta />
+          <Links />
+        </head>
+
+        <body className="flex flex-col justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
+          <Header />
+         
+          <div className="w-full flex-grow">
+            <div className="flex flex-col justify-center items-center w-full h-full p-3 ">
+              <h1 className="text-5xl font-bold">Oh non !</h1>
+              <p>Une erreur est survenue</p>
+              <Link to="/" className="mt-5">
+                <Button variant="outline">
+                  Retour à l'accueil
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <Scripts />
+          <LiveReload />
+        </body>
+
+      </html>
+    )
+  }
+  else {
+    return (
+      <html lang="fr" className="dark">
+        <head>
+          <title>Oh non !</title>
+          <Meta />
+          <Links />
+        </head>
+  
+        <body className="flex flex-row justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
+  
+          <Sidebar />
+  
+  
+          <div className="w-5/6 flex-grow">
+            <div className="flex flex-col justify-center items-center w-full h-full p-3 ">
+              <h1 className="text-5xl font-bold">Oh non !</h1>
+              <p>Une erreur est survenue</p>
+             
+                <Link to="/" className="mt-5">
+                   <Button variant="outline">
+                  Retour à l'accueil
+                     </Button>
+                  </Link>
+           
+  
+            </div>
+          </div>
+          <Scripts />
+  
+  
+  
+        </body>
+  
+      </html>
+    );
+  }
+ 
+
+  
 }

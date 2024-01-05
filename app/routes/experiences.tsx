@@ -3,7 +3,8 @@ import { ScrollArea } from '~/components/ui/scroll-area'
 import { createClient } from '@supabase/supabase-js'
 import { useLoaderData } from '@remix-run/react'
 import Experience from '~/components/experience'
-
+import { Meta, Links, Scripts } from '@remix-run/react'
+import { useRouteError } from '@remix-run/react'
 
 
 export async function loader() {
@@ -19,9 +20,15 @@ export async function loader() {
         .select('*')
         .order('year_start', { ascending: false })
         console.log(experiences, error)
-    return {
-        experiences
-    }
+        
+        if (error) {
+            throw error
+        }
+
+     
+        return {
+            experiences
+        }
 }
 
 export default function Experiences() {
@@ -42,3 +49,24 @@ export default function Experiences() {
     )
 
 }
+
+
+export function ErrorBoundary() {
+    const error = useRouteError();
+    console.error(error);
+    return (
+      <html>
+        <head>
+          <title>Oh no!</title>
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          {/* add the UI you want your users to see */}
+          <Scripts />
+          The page failed to load. Please try again later.
+        </body>
+      </html>
+    );
+  }
+  
