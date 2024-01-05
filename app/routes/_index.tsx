@@ -21,12 +21,12 @@ export default function Index() {
 
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
       Bienvenue sur <span className="
-      text-blue-500 font-bold
+       font-bold
       ">Docs</span>, mon site où je partage mes expériences, mes projets, mes compétences et mes formations, en gros c'est mon portfolio.
       </p>
 
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
-      Ce site est aussi un projet personnel de prise en main du framework <a href="https://remix.run/" target="_blank" className="text-blue-500">Remix</a>. Pratiquant React depuis plusieurs années, et ayant déjà utilisé NextJS, j'ai décidé d'essayer Remix.
+      Ce site est aussi un projet personnel de prise en main du framework <a href="https://remix.run/" target="_blank" className="text-blue-500 underline">Remix</a>. Pratiquant React depuis plusieurs années, et ayant déjà utilisé NextJS, j'ai décidé d'essayer Remix.
       </p>
 
       <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10">
