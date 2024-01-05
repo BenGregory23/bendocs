@@ -31,7 +31,7 @@ export default function Index() {
 
       <div className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10">
         <Card className="lg:max-w-prose min-w-60  lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
-          <Link to="/experiences">
+          <Link to="/about">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
 
@@ -59,7 +59,7 @@ export default function Index() {
         </Card>
 
         <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
-          <Link to="/experiences">
+          <Link to="/projects">
             <CardContent className="flex flex-col justify-center items-center p-8">
               
 
