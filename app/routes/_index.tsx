@@ -18,7 +18,6 @@ export default function Index() {
         Ben GREGORY <Badge variant={"secondary"}>Docs</Badge>
         
       </h1>
-
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
       Bienvenue sur <span className="
        font-bold

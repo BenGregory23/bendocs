@@ -17,6 +17,29 @@ module.exports = {
       },
     },
     extend: {
+      typography: {
+        default: {
+          css: {
+            'h1': {
+              fontSize: '2rem', // Default font size for h1
+              fontWeight: 'bold',
+              // Add more styles as needed
+            },
+            'h2': {
+              fontSize: '1.5rem', // Default font size for h2
+              fontWeight: 'semibold',
+            },
+            'ul': {
+              listStyleType: 'disc', // Default list style for ul
+              marginLeft: '1.5rem',
+            },
+            'p': {
+              fontSize: '1rem', // Default font size for paragraphs
+            },
+            // Add more styles for other elements
+          }
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

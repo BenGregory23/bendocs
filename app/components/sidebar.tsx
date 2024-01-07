@@ -23,8 +23,7 @@ export function Sidebar() {
   return (
     <div
       className="flex flex-col justify-between lg:min-h-screen lg:w-1/6 lg:max-w-[350px] lg:flex-shrink-0 lg:sticky lg:top-0 p-3
-        dark:bg-primary-900 dark:text-white border-r border-secondary dark:border-secondary rounded-none "
-    >
+        dark:bg-primary-900 dark:text-white border-r border-secondary dark:border-secondary rounded-none ">
       <div>
         <Link to={"/"}>
           <Title />

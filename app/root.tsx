@@ -173,8 +173,7 @@ export function ErrorBoundary() {
         <body className="flex flex-row justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
   
           <Sidebar />
-  
-  
+
           <div className="w-5/6 flex-grow">
             <div className="flex flex-col justify-center items-center w-full h-full p-3 ">
               <h1 className="text-5xl font-bold">Oh non !</h1>
@@ -182,9 +181,9 @@ export function ErrorBoundary() {
              
                 <Link to="/" className="mt-5">
                    <Button variant="outline">
-                  Retour à l'accueil
-                     </Button>
-                  </Link>
+                      Retour à l'accueil
+                    </Button>
+                </Link>
            
   
             </div>

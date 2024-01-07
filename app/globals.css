@@ -33,6 +33,17 @@
     border-radius: var(--radius);
   }
 
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-bold;
+  }
+
+  a {
+    @apply text-primary
+  }
+
 
 }
 

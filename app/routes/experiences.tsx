@@ -33,9 +33,6 @@ export async function loader() {
 
 export default function Experiences() {
     const data = useLoaderData<typeof loader>()
-    console.log(data)
-   
-
     return (
         <ScrollArea className="h-screen w-full  rounded-none p-6 flex flex-row justify-center items-center ">
             <div className="flex flex-col justify-center items-center w-full h-full p-3">
