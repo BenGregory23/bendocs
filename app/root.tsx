@@ -21,8 +21,8 @@ import Header from "./components/Header";
 import { useRouteError } from "@remix-run/react";
 import { Button } from "./components/ui/button";
 import { Link } from "@remix-run/react";
-
-
+import Cookies from 'js-cookie';
+import { AuthProvider } from './utils/AuthContext';
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -62,6 +62,17 @@ export function App() {
     }
   }, [])
 
+  useEffect(() => {
+    // Check if there is a stored access token cookie
+    const storedToken = Cookies.get('access_token');
+
+    if (storedToken) {
+        // Assume the user is authenticated
+        //setUser({ authenticated: true });
+        console.log("User authenticated")
+    }
+}, []);
+
   if (isSmallScreen) {
     return (
       <html lang="en" className={clsx(theme)}>
@@ -74,6 +85,7 @@ export function App() {
           <Links />
         </head>
         <body className="flex flex-col justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
+          <AuthProvider>
           <Header />
           <div className="w-full flex justify-end p-2 z-50">
             <ModeToggle />
@@ -85,6 +97,7 @@ export function App() {
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
+          </AuthProvider>
         </body>
       </html>
     )
@@ -102,7 +115,7 @@ export function App() {
         <Links />
       </head>
       <body className="flex flex-row justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
-
+      <AuthProvider>
         <Sidebar />
 
         <div className="fixed top-5 right-5 flex justify-end p-2 z-50">
@@ -115,6 +128,7 @@ export function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        </AuthProvider>
 
       </body>
     </html>

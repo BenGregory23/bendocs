@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
 import ProjectButton from "~/components/projects/project-button";
-import { Link as LinkIcon, Scroll } from "lucide-react";
+import { Edit, Link as LinkIcon, MoreHorizontal, Plus, Scroll } from "lucide-react";
 import { Badge } from "~/components/ui/badge";
 import {
   Carousel,
@@ -10,10 +10,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
-
+import { Button } from "~/components/ui/button";
 import {  useState, useRef } from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
+import ProjectAdd from "~/components/projects/project-add";
 
 export async function loader() {
   const supabaseUrl = "https://oplyzkzywrzqngstylak.supabase.co";
@@ -53,6 +54,7 @@ export default function Projects() {
             setProject={setSelectedProject}
           />
         ))}
+      <ProjectAdd/>
       </div>
 
       <ScrollArea className="flex flex-grow w-full ">
@@ -133,6 +135,9 @@ export default function Projects() {
             </div>
           </div>
         </div>
+        <Button className="fixed bottom-10 right-10">
+        
+          Modifier</Button>
       </ScrollArea>
     </div>
   );
