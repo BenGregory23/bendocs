@@ -19,7 +19,7 @@ export async function loader() {
         .from('experiences')
         .select('*')
         .order('year_start', { ascending: false })
-        console.log(experiences, error)
+      
         
         if (error) {
             throw error

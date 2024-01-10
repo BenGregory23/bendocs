@@ -21,8 +21,7 @@ import Header from "./components/Header";
 import { useRouteError } from "@remix-run/react";
 import { Button } from "./components/ui/button";
 import { Link } from "@remix-run/react";
-import Cookies from 'js-cookie';
-import { AuthProvider } from './utils/AuthContext';
+import { AuthProvider, useAuth } from './utils/AuthContext';
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -55,23 +54,16 @@ export function App() {
   const data = useLoaderData<typeof loader>()
   const [theme] = useTheme()
   const [isSmallScreen, setIsSmallScreen] = useState(false)
-
+ 
   useEffect(() => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       setIsSmallScreen(true)
     }
   }, [])
 
-  useEffect(() => {
-    // Check if there is a stored access token cookie
-    const storedToken = Cookies.get('access_token');
 
-    if (storedToken) {
-        // Assume the user is authenticated
-        //setUser({ authenticated: true });
-        console.log("User authenticated")
-    }
-}, []);
+
+ 
 
   if (isSmallScreen) {
     return (

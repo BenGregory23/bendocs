@@ -74,8 +74,7 @@ export default function Authentification() {
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         signInWithEmail(values.email, values.password, supabase).then((res) => {
-            console.log(res.data)
-          
+           
            
             // and make that the user is logged in
              // Save the access token as a cookie with an expiration time (e.g., 1 hour)

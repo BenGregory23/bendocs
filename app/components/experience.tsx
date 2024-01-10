@@ -9,6 +9,11 @@ import {
     CardTitle,
 } from "~/components/ui/card"
 
+interface Stack {
+    name: string,
+    image: string
+}
+
 interface Experience  {
     company_name: string;
     description: string;
@@ -16,16 +21,14 @@ interface Experience  {
     year_end: string;
     title: string;
     role: string;
-    stack: [],
+    stack: Stack[]
     id: string;
     created_at: string;
 }
 
   
 export default function Experience({experience}: {experience: Experience}){
-    useEffect(() => {
-        console.log(experience.stack)
-    })  
+    
     return (
         <Card className="max-w-prose mb-4 rounded-lg ">
         <CardHeader>

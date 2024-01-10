@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
 import ProjectButton from "~/components/projects/project-button";
-import { Edit, Link as LinkIcon, MoreHorizontal, Plus, Scroll } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
 import { Badge } from "~/components/ui/badge";
 import {
   Carousel,
@@ -11,36 +11,33 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 import { Button } from "~/components/ui/button";
-import {  useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
 import ProjectAdd from "~/components/projects/project-add";
-
+import { useAuth } from "~/utils/AuthContext";
 export async function loader() {
   const supabaseUrl = "https://oplyzkzywrzqngstylak.supabase.co";
   const supabaseKey = process.env.SUPABASE_KEY;
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const publicUrl = supabase.storage
-    .from("bendocs_images")
-    .getPublicUrl("projects_images/loleaf_image_1.png");
-  console.log(publicUrl);
+
 
   const { data: projects, error } = await supabase.from("projects").select("*");
 
-    if (error) {
-        throw error;
-    }
+  if (error) {
+    throw error;
+  }
 
   return { projects };
 }
 
 export default function Projects() {
   const data = useLoaderData();
-  
+  const { user } = useAuth();
   const [project, setSelectedProject] = useState(data.projects[0]);
-  
+
 
   return (
     <div className="flex flex-col lg:h-screen w-full justify-center items-center rounded-none ">
@@ -54,7 +51,10 @@ export default function Projects() {
             setProject={setSelectedProject}
           />
         ))}
-      <ProjectAdd/>
+        {
+          user.authenticated ? <ProjectAdd /> : <></>
+        }
+
       </div>
 
       <ScrollArea className="flex flex-grow w-full ">
@@ -123,7 +123,7 @@ export default function Projects() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselNext/>
+                  <CarouselNext />
                 </Carousel>
               )}
               <p
@@ -135,9 +135,10 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <Button className="fixed bottom-10 right-10">
-        
-          Modifier</Button>
+        {
+          user.authenticated && <Button className="fixed bottom-10 right-10"> Modifier</Button>
+        }
+
       </ScrollArea>
     </div>
   );
