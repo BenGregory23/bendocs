@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card"
 import { Badge } from "~/components/ui/badge";
+import { Key } from "react";
 
-export default function Formation({ formation }) {
+export default function Formation({formation}:any) {
     return(
         <Card className="max-w-prose mb-4 rounded-lg ">
         <CardHeader>
@@ -12,21 +13,19 @@ export default function Formation({ formation }) {
                 }
             </Badge>
             <CardTitle>{formation.title}</CardTitle>
-            <CardDescription> {formation.school_name}</CardDescription>
+            <CardDescription>{formation.school_name}</CardDescription>
         </CardHeader>
         <CardContent>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
                 {formation.description}
-            </p>
-            
+            </p>    
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex flex-rox flex-wrap">
            {
-                formation.stack.map((stack, index) => (
-                     <Badge key={index}  className="w-fit mx-1">{stack.name}</Badge>
+                formation.stack.map((stack: any, index:Key) => (
+                     <Badge key={index}  className="w-fit m-1">{stack.name}</Badge>
                 ))
            }
-           
         </CardFooter>
         </Card>
     )

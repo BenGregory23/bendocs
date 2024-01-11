@@ -30,13 +30,9 @@ export default function Formations() {
                     id: "5"
                 },
                 {
-                    name: "Tailwind",
+                    name: "NodeJS",
                     id: "6"
                 },
-                {
-                    name: "Vercel",
-                    id: "7"
-                }
             ]
         },
         {
@@ -44,36 +40,26 @@ export default function Formations() {
             school_name: "IUT de Clermont-Ferrand",
             year_start: "2020-09-01",
             year_end: "2022-07-31",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+            description: "DUT Informatique de deux ans au sein de l'IUT de Clermont-Ferrand. Apprentissage des bases de la programmation, de la conception de base de données, de la gestion de projet et de la gestion de réseaux. Différents projet utilisants des technologies commes : C, Java, React, HTML/CSS et SQL.",
             stack: [
                 {
-                    name: "React",
+                    name: "C",
                     id: "1"
                 },
                 {
-                    name: "Node",
+                    name: "Java",
                     id: "2"
                 },
                 {
-                    name: "Typescript",
+                    name: "HTML/CSS",
                     id: "3"
                 },
                 {
-                    name: "PostgreSQL",
+                    name: "MySQL",
                     id: "4"
                 },
-                {
-                    name: "Supabase",
-                    id: "5"
-                },
-                {
-                    name: "Tailwind",
-                    id: "6"
-                },
-                {
-                    name: "Vercel",
-                    id: "7"
-                }
+             
+               
             ]
         }
     ]

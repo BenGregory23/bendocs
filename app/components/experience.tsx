@@ -47,13 +47,15 @@ export default function Experience({experience}: {experience: Experience}){
             </p>
             
         </CardContent>
-        <CardFooter>
-           {
+        <CardFooter >
+            <div className="flex flex-rox flex-wrap">
+                 {
                 experience.stack.map((stack, index) => (
                      <Badge key={index}  className="w-fit mx-1">{stack.name}</Badge>
                 ))
-           }
-           
+                }
+            </div>
+        
         </CardFooter>
         </Card>
     )
