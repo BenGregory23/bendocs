@@ -22,6 +22,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Textarea } from '../ui/textarea';
+import {useState} from "react"
 
 const formSchema = z.object({
     name: z.string().min(2, { message: "Veuillez entrer le nom du projet." }),
@@ -34,6 +35,8 @@ const formSchema = z.object({
 })
 
 export default function ProjectAdd() {
+    const [image_paths, setImage_paths] = useState([])
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -151,7 +154,7 @@ export default function ProjectAdd() {
                                             <FormItem>
                                                 <FormLabel>Images pour le projet</FormLabel>
                                                 <FormControl>
-                                                    <Input id="picture" type="file" />
+                                                    <Input id="picture" type="file" multiple/>
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
