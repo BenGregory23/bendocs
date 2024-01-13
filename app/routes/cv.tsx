@@ -9,7 +9,7 @@ const Cv= () => {
     console.log("hello")
     return (
         <Fragment>
-            <h1>CV bite</h1>
+            <h1>CV</h1>
         </Fragment>
     )
 }
