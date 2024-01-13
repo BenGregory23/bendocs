@@ -1,9 +1,18 @@
+import { Fragment } from "react"
+
+export function loader(){
+    return 1
+}
 
 
-
-export const Skills = () => {
+const Skills = () => {
+    console.log("hello")
     return (
-        <>
-        </>
+        <Fragment>
+            <h1>Compétences</h1>
+        </Fragment>
     )
 }
+
+
+export default Skills

@@ -53,6 +53,10 @@ export default function Header(){
                     <li>
                         <Link to="/formations" ><Button className="w-full font-semibold text-left flex justify-start"  variant={isLinkActive(location.pathname, "/formations") ? "secondary" : "ghost"} > Formations</Button></Link>
                     </li>
+                    <li>
+                        <Link to="/cv" ><Button className="w-full font-semibold text-left flex justify-start"  variant={isLinkActive(location.pathname, "/cv") ? "secondary" : "ghost"} > CV</Button></Link>
+                    </li>
+                  
                   
 
                 </ul>
