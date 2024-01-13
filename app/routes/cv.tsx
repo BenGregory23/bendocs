@@ -1,12 +1,18 @@
-
+import { Fragment } from "react"
 
 export function loader(){
-    
+    return 1
 }
 
-export default function Cv(){
+
+const Cv= () => {
+    console.log("hello")
     return (
-        <>
-        </>
+        <Fragment>
+            <h1>CV</h1>
+        </Fragment>
     )
 }
+
+
+export default Cv
