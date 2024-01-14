@@ -11,6 +11,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 
 import { Button } from "~/components/ui/button"
 import { Link, useLocation } from "@remix-run/react"
+import Contact from "./contact"
 
 
 const isLinkActive = (currentPath: string, path: string) => {
@@ -66,7 +67,7 @@ export default function Header(){
            
             <div className="mt-8 flex flex-col space-y-2">
                
-                <Button>Me Contacter</Button>
+                <Contact/>
             </div>
             
         </div>

@@ -13,11 +13,12 @@ export async function loader(){
 
 }
 
-export const Skill = (skill:Skill) =>{
+export const Skill = (skill:any) =>{
 
     return (
-        <div>
-            TODO
+        <div className="p-20 border bg-slate-900">
+            TEST
+            <h1 className="text-white">{skill.name}</h1>
         </div>
     )
 
