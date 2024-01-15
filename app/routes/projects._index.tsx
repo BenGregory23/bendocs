@@ -16,12 +16,16 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
 import ProjectAdd from "~/components/projects/project-add";
 import { useAuth } from "~/utils/AuthContext";
+
 export async function loader() {
   const supabaseUrl = "https://oplyzkzywrzqngstylak.supabase.co";
   const supabaseKey = process.env.SUPABASE_KEY;
+  
+  if(supabaseKey === undefined ||supabaseKey === null ){
+    throw new Error("Error : Missing API Key")
+  } 
 
   const supabase = createClient(supabaseUrl, supabaseKey);
-
 
 
   const { data: projects, error } = await supabase.from("projects").select("*");
