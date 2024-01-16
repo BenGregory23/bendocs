@@ -150,7 +150,7 @@ export function ErrorBoundary() {
         <AuthProvider> {/* Include AuthProvider here */}
           {!isSmallScreen && <Sidebar />}
           <div className={clsx("flex-grow", isSmallScreen ? "w-full" : "w-5/6")}>
-            <Header />
+          
             <div className="flex flex-col justify-center items-center w-full h-full p-3 ">
               <h1 className="text-5xl font-bold">Oh non !</h1>
               <p>Une erreur est survenue</p>
