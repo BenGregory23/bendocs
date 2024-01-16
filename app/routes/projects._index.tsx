@@ -19,7 +19,7 @@ import { useAuth } from "~/utils/AuthContext";
 
 export async function loader() {
   const supabaseUrl = "https://oplyzkzywrzqngstylak.supabase.co";
-  const supabaseKey = process.env.SUPABASE_KEY;
+  const supabaseKey = process.env.SUPABASE_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wbHl6a3p5d3J6cW5nc3R5bGFrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNDI4NjQ0NywiZXhwIjoyMDE5ODYyNDQ3fQ.lwO3UrPUhuqINVXZBveLZynfcAeoR4I90wl8lwlOP6s"
   
   if(supabaseKey === undefined ||supabaseKey === null ){
     throw new Error("Error : Missing API Key")
