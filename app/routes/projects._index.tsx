@@ -11,7 +11,7 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 import { Button } from "~/components/ui/button";
-import { useState, useRef } from "react";
+import { useState} from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
 import ProjectAdd from "~/components/projects/project-add";
