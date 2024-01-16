@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import CVHolder from "~/components/cv/cv-holder"
 
 

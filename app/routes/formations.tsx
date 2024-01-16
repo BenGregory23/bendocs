@@ -1,4 +1,5 @@
 import Formation from "../components/formations/formation"
+
 export default function Formations() {
     const formations = [
         {

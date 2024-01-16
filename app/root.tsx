@@ -127,6 +127,47 @@ export function App() {
   );
 }
 
+
+export function ErrorBoundary() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const error = useRouteError();
+
+  useEffect(() => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      setIsSmallScreen(true);
+    }
+  }, []);
+
+  return (
+    <html lang="en" className={clsx("dark", { "dark": isSmallScreen })}>
+      <head>
+        <title>Oh non !</title>
+        <Meta />
+        <Links />
+      </head>
+
+      <body className={clsx("flex", "min-h-screen", "bg-primary-50", { "dark:bg-primary-900": isSmallScreen })}>
+        <AuthProvider> {/* Include AuthProvider here */}
+          {!isSmallScreen && <Sidebar />}
+          <div className={clsx("flex-grow", isSmallScreen ? "w-full" : "w-5/6")}>
+            <Header />
+            <div className="flex flex-col justify-center items-center w-full h-full p-3 ">
+              <h1 className="text-5xl font-bold">Oh non !</h1>
+              <p>Une erreur est survenue</p>
+              <Link to="/" className="mt-5">
+                <Button variant="outline">Retour à l'accueil</Button>
+              </Link>
+            </div>
+          </div>
+          <Scripts />
+          <LiveReload />
+        </AuthProvider>
+      </body>
+    </html>
+  );
+}
+
+/*
 export function ErrorBoundary() {
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   const error = useRouteError();
@@ -207,3 +248,4 @@ export function ErrorBoundary() {
 
   
 }
+*/

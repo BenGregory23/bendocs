@@ -1,7 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
 import ProjectButton from "~/components/projects/project-button";
-import { Link as LinkIcon } from "lucide-react";
 import { Badge } from "~/components/ui/badge";
 import {
   Carousel,
@@ -16,6 +15,7 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
 import ProjectAdd from "~/components/projects/project-add";
 import { useAuth } from "~/utils/AuthContext";
+
 
 export async function loader() {
   const supabaseUrl = "https://oplyzkzywrzqngstylak.supabase.co";
