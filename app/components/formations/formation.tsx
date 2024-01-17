@@ -1,9 +1,27 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card"
 import { Badge } from "~/components/ui/badge";
 import { Key } from "react";
+import {motion} from "framer-motion"
+
+
 
 export default function Formation({formation}:any) {
+    const containerVariants = {
+        hidden: { opacity: 0, y: -10 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+        },
+    }
+
+
+    const badgeVariants = {
+        hidden: { opacity: 0, x: -10 },
+        visible: { opacity: 1, x: 0 },
+    }
     return(
+        <motion.div variants={containerVariants}>
         <Card className="max-w-prose mb-4 rounded-lg ">
         <CardHeader>
             <Badge variant={"secondary"} className="w-fit">
@@ -23,10 +41,14 @@ export default function Formation({formation}:any) {
         <CardFooter className="flex flex-rox flex-wrap">
            {
                 formation.stack.map((stack: any, index:Key) => (
-                     <Badge key={index}  className="w-fit m-1">{stack.name}</Badge>
+                    <motion.div key={index} variants={badgeVariants}>
+                        <Badge key={index}  className="w-fit m-1">{stack.name}</Badge>
+                    </motion.div>
+                     
                 ))
            }
         </CardFooter>
         </Card>
+        </motion.div>
     )
 }

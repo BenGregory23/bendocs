@@ -8,6 +8,7 @@ import { Link } from "@remix-run/react";
 import { Badge } from "~/components/ui/badge";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import LetterByLetterAnimation from "~/components/animation/LetterByLetterAnimation";
 
 export default function Index() {
   const title = useRef();
@@ -31,9 +32,10 @@ export default function Index() {
       <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl">
         <h1
           ref={title}
-          className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl "
+          className="flex  items-end scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl "
         >
-          Ben GREGORY <Badge variant={"secondary"}>Docs</Badge>
+          <LetterByLetterAnimation text="Ben GREGORY"/>
+          <Badge variant={"secondary"}>Docs</Badge>
         </h1>
         <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
           Bienvenue sur{" "}
@@ -54,6 +56,7 @@ export default function Index() {
             href="https://remix.run/"
             target="_blank"
             className="text-blue-500 underline"
+            rel="referrer"
           >
             Remix
           </a>
