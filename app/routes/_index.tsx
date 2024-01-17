@@ -6,15 +6,21 @@ import {
 } from "~/components/ui/card"
 import { Link } from "@remix-run/react"
 import { Badge } from "~/components/ui/badge";
+import { useRef } from "react";
+import { useAnimate, stagger } from "framer-motion"
+
 
 
 
 export default function Index() {
+  const title = useRef()
+
+
   return (
     <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none">
 
       <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
+      <h1 ref={title} className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">
         Ben GREGORY <Badge variant={"secondary"}>Docs</Badge>
         
       </h1>

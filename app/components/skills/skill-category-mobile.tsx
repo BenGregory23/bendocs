@@ -1,41 +1,51 @@
-import { Skill } from "./skill"
-import { stack_type, stackTypeDescriptions } from "~/utils/stack_type"
-import { Card, CardContent } from "~/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "~/components/ui/carousel"
-
+import { Skill } from "./skill";
+import { stackTypeDescriptions } from "~/utils/stack_type";
+import { motion } from "framer-motion";
 
 const SkillCategoryMobile = ({ array, title }: any) => {
-    return (
-        <div className="flex flex-col lg:m-1 rounded-none ">
-            <div className="flex flex-col justify-start my-3 lg:pl-0 pl-3 ">
-                {title}
-                <p className="text-sm text-muted-foreground m-0">
-                    {stackTypeDescriptions[title]}
-                </p>
-            </div>
+  const containerVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+  };
 
+  const skillVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0 },
+  };
 
-       
-         
-                <div className="w-screen flex flex-row flex-wrap space-x-2  lg:pl-0 pl-3">
-             
-                    {
-                        array.map((skill, index)=>{
-                            return <Skill key={index} skill={skill}/>
-                            
-                        })
-                    }
-                </div>
-          
+  return (
+    <motion.div
+      className="flex flex-col lg:m-1 rounded-none"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+    
 
-        </div >
-    )
-}
+      <motion.div className="w-screen flex flex-row flex-wrap space-x-2 lg:pl-0 pl-3" variants={containerVariants}>
+        <motion.div className="flex flex-col lg:m-1 rounded-none" variants={containerVariants}>
+          <motion.div className="flex flex-col justify-start my-3 lg:pl-0 pl-3" variants={containerVariants}>
+            {title}
+            <p className="text-sm text-muted-foreground m-0">
+              {stackTypeDescriptions[title]}
+            </p>
+          </motion.div>
 
-export default SkillCategoryMobile
+          <motion.div className="w-screen flex flex-row flex-wrap space-x-2 lg:pl-0 pl-3" variants={containerVariants}>
+            {array.map((skill, index) => (
+              <motion.div key={index} variants={skillVariants}>
+                <Skill skill={skill} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default SkillCategoryMobile;

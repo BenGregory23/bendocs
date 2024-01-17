@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 import { Button } from "~/components/ui/button";
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
 import ProjectAdd from "~/components/projects/project-add";
@@ -41,6 +41,9 @@ export default function Projects() {
   const data = useLoaderData();
   const { user } = useAuth();
   const [project, setSelectedProject] = useState(data.projects[0]);
+
+
+ 
 
 
   return (

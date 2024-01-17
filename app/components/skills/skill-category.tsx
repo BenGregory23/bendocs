@@ -1,28 +1,45 @@
-import { Skill } from "./skill"
-import { stack_type, stackTypeDescriptions } from "~/utils/stack_type"
+import { Skill } from "./skill";
+import { stackTypeDescriptions } from "~/utils/stack_type";
+import { motion } from "framer-motion";
+
 const SkillCategory = ({ array, title }: any) => {
-    return (
-        <div className="flex flex-col m-1">
-            <div className="flex flex-col justify-start my-3 ">
-                {title}
-                <p className="text-sm text-muted-foreground m-0 ">
+  const containerVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+  };
 
-                    {stackTypeDescriptions[title]}
-                </p>
-            </div>
+  const skillVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0 },
+  };
 
+  return (
+    <motion.div
+      className="flex flex-col m-1"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.div className="flex flex-col justify-start my-3" variants={containerVariants}>
+        {title}
+        <p className="text-sm text-muted-foreground m-0">
+          {stackTypeDescriptions[title]}
+        </p>
+      </motion.div>
 
-            <div className="flex lg:flex-row space-x-3">
-                {
-                    array.map((skill, index) => {
-                        return <Skill key={index} skill={skill} />
-                    })
-                }
+      <motion.div className="flex lg:flex-row space-x-3" variants={containerVariants}>
+        {array.map((skill, index) => (
+          <motion.div key={index} variants={skillVariants}>
+            <Skill skill={skill} />
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
 
-            </div>
-
-        </div>
-    )
-}
-
-export default SkillCategory
+export default SkillCategory;

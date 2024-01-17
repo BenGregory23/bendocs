@@ -106,7 +106,7 @@ export function App() {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
       </head>
-      <body className="flex flex-row justify-center min-h-screen bg-primary-50 dark:bg-primary-900">
+      <body className="flex flex-row justify-center min-h-screen bg-primary-50 dark:bg-primary-900 lg:max-h-screen">
       <AuthProvider>
         <Sidebar />
 
