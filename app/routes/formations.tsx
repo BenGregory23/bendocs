@@ -1,6 +1,21 @@
 import Formation from "../components/formations/formation"
+import {motion} from "framer-motion"
 
 export default function Formations() {
+    const containerVariants = {
+        hidden: { opacity: 0, y: -10 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+        },
+      };
+    
+      const formationVariants = {
+        hidden: { opacity: 0, x: -10 },
+        visible: { opacity: 1, x: 0 },
+      };
+
     const formations = [
         {
             title: "Licence Professionnelle Développement Web",
@@ -65,13 +80,17 @@ export default function Formations() {
         }
     ]
     return (
-        <div className="flex flex-col justify-center items-center w-full h-full p-3">
+        <motion.div  initial="hidden"
+        animate="visible" variants={containerVariants} className="flex flex-col justify-center items-center w-full h-full p-3">
            {
                formations.map((formation, index) => (
+                <motion.div key={index} variants={formationVariants}>
+
                 <Formation key={index} formation={formation} />
+                </motion.div>
                 ))    
             }
-        </div>
+        </motion.div>
     )
 
 }
