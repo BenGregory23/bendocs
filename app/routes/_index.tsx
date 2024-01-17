@@ -21,7 +21,7 @@ export default function Index() {
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
       Bienvenue sur <span className="
        font-bold
-      ">Docs</span>, mon site où je partage mes expériences, mes projets, mes compétences et mes formations, en gros c'est mon portfolio.
+      ">Docs</span>, mon site où je partage mes expériences, mes projets, mes compétences et mes formations.
       </p>
 
       <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
