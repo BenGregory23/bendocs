@@ -96,3 +96,6 @@
   color : var(--foreground);
 }
 
+body {
+  @apply dark;
+}
