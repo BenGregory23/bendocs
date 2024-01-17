@@ -23,7 +23,7 @@ const ProjectsHeader = ({ projects, setSelectedProject, user }: any) => {
     animate={"visible"}
 
       variants={containerVariants}
-      className="flex flex-row sticky z-50 lg:z-10 lg:static justify-center items-center w-full lg:min-h-24 h-fit p-3 space-x-4 rounded-none"
+      className="flex flex-row sticky  z-50 lg:z-10 lg:static justify-center items-center w-full h-full p-3 space-x-4 rounded-none"
     >
       {projects.map((currentProject: any, index: number) => (
         <motion.div variants={buttonVariants}>

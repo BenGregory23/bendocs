@@ -173,11 +173,16 @@ export default function Projects() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className=" relative lg:w-full lg:h-40 border bg-primary text-secondary my-5 lg:p-3"
+                className="flex flex-col items-center justify-center relative lg:w-full lg:h-40 border bg-primary text-secondary my-5 lg:p-3"
               >
                 <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl rounded-none bg-transparent text-secondary">
                   Ce projet vous intéresse ?
                 </h1>
+
+                <div className="m-2 flex flex-col space-y-2 bg-transparent">
+                  <Button variant={"outline"}>Aller voir le code source</Button>
+                  <Button variant={"ghost"}>Aller voir le projet</Button>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -189,5 +194,3 @@ export default function Projects() {
     </div>
   );
 }
-
-
