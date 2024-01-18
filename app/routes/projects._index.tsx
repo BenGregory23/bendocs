@@ -175,12 +175,12 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center relative lg:w-full lg:h-40 border bg-primary text-secondary my-5 lg:p-3"
               >
-                <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl rounded-none bg-transparent text-secondary">
-                  <span className="rounded-none bg-transparent text-secondary lg:text-6xl">
+                <h1 className="scroll-m-20 p-3 text-xl font-extrabold tracking-tight lg:text-4xl rounded-none bg-transparent text-secondary">
+                  <span className="rounded-none bg-transparent text-secondary text-4xl lg:text-6xl">
                     {"{"}
                   </span>
                   Ce projet vous intéresse ?{" "}
-                  <span className="rounded-none bg-transparent text-secondary lg:text-6xl">
+                  <span className="rounded-none bg-transparent text-secondary text-4xl lg:text-6xl">
                     {"}"}
                   </span>
                 </h1>
