@@ -99,3 +99,35 @@
 body {
   @apply dark;
 }
+
+
+/* Override styles for specific Markdown elements */
+.markdown h1 {
+  @apply text-3xl font-bold;
+}
+
+.markdown h2 {
+  @apply text-2xl font-bold mt-3 mb-1;
+}
+
+.markdown h3 {
+  @apply text-lg font-bold;
+}
+
+.markdown p {
+  @apply leading-7 mb-4;
+}
+
+.markdown a {
+  @apply text-primary;
+}
+
+
+
+.markdown ul {
+  @apply list-decimal list-outside
+}
+
+.markdown li {
+  @apply pl-4;
+}

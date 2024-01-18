@@ -165,7 +165,7 @@ export default function Projects() {
                 </Carousel>
               )}
               <p
-                className="lg:max-w-prose pb-3 w-full text-lg font-medium tracking-tight rounded-none text-justify"
+                className="markdown lg:max-w-prose pb-3 w-full text-lg font-medium tracking-tight rounded-none text-justify"
                 dangerouslySetInnerHTML={{
                   __html: marked(project.description),
                 }}
@@ -176,12 +176,36 @@ export default function Projects() {
                 className="flex flex-col items-center justify-center relative lg:w-full lg:h-40 border bg-primary text-secondary my-5 lg:p-3"
               >
                 <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl rounded-none bg-transparent text-secondary">
-                  Ce projet vous intéresse ?
+                  <span className="rounded-none bg-transparent text-secondary lg:text-6xl">
+                    {"{"}
+                  </span>
+                  Ce projet vous intéresse ?{" "}
+                  <span className="rounded-none bg-transparent text-secondary lg:text-6xl">
+                    {"}"}
+                  </span>
                 </h1>
 
                 <div className="m-2 flex flex-col space-y-2 bg-transparent">
-                  <Button variant={"outline"}>Aller voir le code source</Button>
-                  <Button variant={"ghost"}>Aller voir le projet</Button>
+                  <Button variant={"outline"}>
+                    <a
+                      href={project.source_link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Aller voir le code source
+                    </a>
+                  </Button>
+                  {project.link === null ? null : (
+                    <Button variant={"outline"}>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Aller voir le projet
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </motion.div>
             </div>
