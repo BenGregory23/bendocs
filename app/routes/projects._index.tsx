@@ -173,14 +173,14 @@ export default function Projects() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center relative lg:w-full lg:h-40 border bg-primary text-secondary my-5 lg:p-3 lg:max-w-prose"
+                className="flex flex-col items-center justify-center relative lg:w-full lg:h-48 border bg-primary text-secondary my-5 lg:p-3 lg:max-w-prose"
               >
                 <h1 className="scroll-m-20 p-3 text-xl font-extrabold tracking-tight lg:text-4xl rounded-none bg-transparent text-secondary">
-                  <span className="rounded-none bg-transparent text-secondary text-4xl lg:text-6xl">
+                  <span className="rounded-none bg-transparent font-bold text-secondary text-4xl lg:text-6xl">
                     {"{"}
                   </span>
                   Ce projet vous intéresse ?{" "}
-                  <span className="rounded-none bg-transparent text-secondary text-4xl lg:text-6xl">
+                  <span className="rounded-none bg-transparent font-bold text-secondary text-4xl lg:text-6xl">
                     {"}"}
                   </span>
                 </h1>
@@ -190,6 +190,7 @@ export default function Projects() {
                     <a
                       href={project.source_link}
                       target="_blank"
+                      className="rounded-none bg-transparent"
                       rel="noreferrer"
                     >
                       Aller voir le code source
@@ -200,6 +201,7 @@ export default function Projects() {
                       <a
                         href={project.link}
                         target="_blank"
+                        className="rounded-none bg-transparent"
                         rel="noreferrer"
                       >
                         Aller voir le projet
