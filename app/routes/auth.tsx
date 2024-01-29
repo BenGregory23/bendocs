@@ -8,9 +8,8 @@ import * as z from "zod"
 
 import { Button } from "~/components/ui/button"
 import {
-    Form,
+    FormShad,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -100,7 +99,7 @@ export default function Authentification() {
             {
                 user.authenticated ? <div className="text-2xl">Vous êtes connecté</div> : <div className="text-2xl">Vous n'êtes pas connecté</div>
             }
-            <Form {...form}>
+            <FormShad {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 flex flex-col items-center">
                     <FormField
                         control={form.control}
@@ -130,7 +129,7 @@ export default function Authentification() {
                     />
                     <Button type="submit">Valider</Button>
                 </form>
-            </Form>
+            </FormShad>
         </div>
 
     )
