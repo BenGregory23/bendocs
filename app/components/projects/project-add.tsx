@@ -1,6 +1,6 @@
 import { Button } from '~/components/ui/button';
 import {
-    Form,
+    FormShad,
     FormControl,
     FormDescription,
     FormField,
@@ -66,7 +66,7 @@ export default function ProjectAdd() {
                     <SheetHeader>
                         <SheetTitle>Ajout d'un projet</SheetTitle>
                         <SheetDescription>
-                            <Form {...form}>
+                            <FormShad {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
                                     <FormField
                                         control={form.control}
@@ -163,7 +163,7 @@ export default function ProjectAdd() {
 
                                     <Button type="submit">Valider</Button>
                                 </form>
-                            </Form>
+                            </FormShad>
                         </SheetDescription>
                     </SheetHeader>
                 </SheetContent>
