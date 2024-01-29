@@ -27,10 +27,10 @@ export function Sidebar() {
   useEffect(() => {
     // Check if there is a stored access token cookie
     const storedToken = Cookies.get('access_token');
-    console.log(user)
+    
     if (storedToken) {
         login(storedToken);  
-        console.log(user)
+       
     }
 }, []);
  
