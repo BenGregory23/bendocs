@@ -1,6 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { useLoaderData } from "@remix-run/react";
-import ProjectButton from "~/components/projects/project-button";
+import { Link, useLoaderData } from "@remix-run/react";
 import { Badge } from "~/components/ui/badge";
 import {
   Carousel,
@@ -214,7 +213,9 @@ export default function Projects() {
           </div>
         </div>
         {user.authenticated && (
+          <Link to={project.id + '/edit'}>
           <Button className="fixed bottom-10 right-10"> Modifier</Button>
+          </Link>
         )}
       </ScrollArea>
     </div>
