@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import LetterByLetterAnimation from "~/components/animation/LetterByLetterAnimation";
 
+
 export default function Index() {
   const title = useRef();
 
@@ -115,6 +116,7 @@ export default function Index() {
           </motion.div>
         </motion.div>
       </div>
+     
     </div>
   );
 }

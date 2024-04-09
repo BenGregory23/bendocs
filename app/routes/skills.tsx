@@ -17,7 +17,7 @@ export async function loader() {
   const supabase = createClient(supabaseURL, supabaseKEY);
 
   const { data: skills } = await supabase.from("stack").select("*");
-  console.log(skills);
+
 
   const current_stack = skills?.filter((skill) => skill.isMainStack === true);
   const tools = skills?.filter((skill) => skill.type === stack_type.TOOLS);
