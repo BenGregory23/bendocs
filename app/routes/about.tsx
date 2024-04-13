@@ -11,8 +11,8 @@ export default function About() {
 
                     <div className="flex flex-row items-center justify-center space-x-4">
                         <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" />
-                            <AvatarFallback>CN</AvatarFallback>
+                            <AvatarImage src="https://github.com/BenGregory23.png" />
+                            <AvatarFallback>BG</AvatarFallback>
                         </Avatar>
                         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 rounded-none">
                             Ben Gregory
@@ -30,11 +30,11 @@ export default function About() {
                     <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
 
 
-                    Je suis un développeur web passionné. Fort d'une année d'expérience dans le domaine du développement, j'ai eu l'opportunité de travailler sur des projets variés, allant de la création de sites web interactifs à la conception d'applications robustes. 
+                    Je suis un développeur web passionné. Fort de deux années d'expériences dans le domaine du développement, j'ai eu l'opportunité de travailler sur des projets variés, allant de la création de sites web interactifs à la conception d'applications robustes. 
                     </p>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
                     Je suis spécialisé en React pour le frontend et Javascript/Java pour le backend, et je suis constamment en quête d'apprentissage pour rester à la pointe de la technologie.
-                    Je travaille actuellement chez <a className="text-blue-500 underline" target='_blank' href='https://sii-group.com/fr-FR'>Sii</a> en tant que développeur fullstack à Niort.
+                    Je travaille actuellement chez <a className="text-blue-500 underline" target='_blank' rel='noreferrer' href='https://abrege.co'>Abrege</a> en tant que développeur fullstack à Poitiers.
 
                     </p>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
