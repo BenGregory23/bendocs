@@ -56,8 +56,8 @@ export default function Index() {
           <a
             href="https://remix.run/"
             target="_blank"
+            rel="noreferrer"
             className="text-blue-500 underline"
-            rel="referrer"
           >
             Remix
           </a>
