@@ -29,6 +29,9 @@ export async function loader() {
 
 export default function Experiences() {
   const data = useLoaderData<typeof loader>();
+
+
+
   const containerVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {

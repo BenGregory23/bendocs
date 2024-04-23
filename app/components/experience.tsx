@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { motion } from "framer-motion";
+import markdownit from 'markdown-it'
 
 interface Stack {
   name: string;
@@ -28,6 +29,8 @@ interface Experience {
 }
 
 export default function Experience({ experience }: { experience: Experience }) {
+  const md = markdownit();
+  console.log(experience)
   const containerVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
@@ -56,9 +59,11 @@ export default function Experience({ experience }: { experience: Experience }) {
           <CardDescription> {experience.company_name}</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
-            {experience.description}
-            
+          <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify" dangerouslySetInnerHTML={{
+            __html: md.render(experience.description),
+          }}>
+
+
           </p>
         </CardContent>
         <CardFooter>

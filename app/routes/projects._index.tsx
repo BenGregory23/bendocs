@@ -12,6 +12,7 @@ import { Button } from "~/components/ui/button";
 import { useEffect, useState } from "react";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { marked } from "marked";
+import markdownit from "markdown-it"
 import { useAuth } from "~/utils/AuthContext";
 import ProjectsHeader from "~/components/projects/projects-header";
 import ProjectsHeaderMobile from "~/components/projects/projects-header-mobile";
@@ -43,7 +44,7 @@ export default function Projects() {
   const { projects } = useLoaderData<typeof loader>();
   const { user } = useAuth();
   const [project, setSelectedProject] = useState(projects[0]);
-
+  const md = markdownit();
   useEffect(() => {
     if (window.matchMedia("(max-width: 768px)").matches) {
       setIsMobile(true);
@@ -166,7 +167,7 @@ export default function Projects() {
               <p
                 className="markdown lg:max-w-prose pb-3 w-full text-lg font-medium tracking-tight rounded-none text-justify"
                 dangerouslySetInnerHTML={{
-                  __html: marked(project.description),
+                  __html: md.render(project.description),
                 }}
               ></p>
               <motion.div
