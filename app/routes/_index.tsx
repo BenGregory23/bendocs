@@ -36,7 +36,7 @@ export default function Index() {
           className="flex  items-end scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl bg-transparent "
         >
           <LetterByLetterAnimation text="Ben GREGORY" />
-          <Badge variant={"secondary"}>Docs</Badge>
+          <Badge variant={"secondary"} className="bg-accentGreen">Docs</Badge>
         </h1>
         <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify bg-transparent ">
           Bienvenue sur{" "}

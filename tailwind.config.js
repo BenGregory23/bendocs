@@ -37,6 +37,10 @@ module.exports = {
               fontSize: '1rem', // Default font size for paragraphs
             },
             // Add more styles for other elements
+            'a':{
+              color: 'hsl(135, 70%, 34%)',
+              fontSize: '1rem'
+            }
           }
         },
       },
@@ -74,6 +78,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        accentGreen:{
+          DEFAULT: "hsl(135, 70%, 34%)",
+          foreground: "hsl(135, 70%, 34%)",
+        } 
       },
       borderRadius: {
         lg: "var(--radius)",

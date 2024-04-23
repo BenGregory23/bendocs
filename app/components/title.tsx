@@ -7,7 +7,7 @@ export function Title() {
             <Link to="/">
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
                     Ben GREGORY {"  "}
-                    <Badge variant={"secondary"}>Docs</Badge>
+                    <Badge variant={"secondary"} className="bg-accentGreen">Docs</Badge>
 
                 </h3>
             </Link>

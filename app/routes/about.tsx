@@ -34,11 +34,11 @@ export default function About() {
                     </p>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
                     Je suis spécialisé en React pour le frontend et Javascript/Java pour le backend, et je suis constamment en quête d'apprentissage pour rester à la pointe de la technologie.
-                    Je travaille actuellement chez <a className="text-blue-500 underline" target='_blank' rel='noreferrer' href='https://abrege.co'>Abrege</a> en tant que développeur fullstack à Poitiers.
+                    Je travaille actuellement chez <a className="text-accentGreen underline" target='_blank' rel='noreferrer' href='https://abrege.co'>Abrege</a> en tant que développeur fullstack à Poitiers.
 
                     </p>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
-                        En dehors du développement, j'ai une passion pour l'escalade, les jeux vidéo (surtout compétitifs), et je suis un fervent fan de Formule 1. Mon objectif à court terme est de maîtriser le langage <a  className="text-blue-500 underline" href="https://golang.org/" target="_blank"> Go (Golang)</a>, et de perfectionner mes compétences en utilisant <a className="text-blue-500 underline" href="https://spring.io/guides" target="_blank">Spring Boot</a>. À long terme, je vise à développer un SAAS complet. Je suis toujours ouvert aux nouvelles opportunités et aux collaborations passionnantes dans le monde du développement.
+                        En dehors du développement, j'ai une passion pour l'escalade, les jeux vidéo (surtout compétitifs), et je suis un fervent fan de Formule 1. Mon objectif à court terme est de maîtriser le langage <a  className="text-accentGreen underline" href="https://golang.org/" target="_blank"> Go (Golang)</a>, et de perfectionner mes compétences en utilisant <a className="text-accentGreen underline" href="https://spring.io/guides" target="_blank">Spring Boot</a>. À long terme, je vise à développer un SAAS complet. Je suis toujours ouvert aux nouvelles opportunités et aux collaborations passionnantes dans le monde du développement.
                     </p>
 
                 </section>

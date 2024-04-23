@@ -30,7 +30,7 @@ interface Experience {
 
 export default function Experience({ experience }: { experience: Experience }) {
   const md = markdownit();
-  console.log(experience)
+ 
   const containerVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
