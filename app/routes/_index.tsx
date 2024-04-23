@@ -29,22 +29,18 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none">
-      <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl">
+    <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none    bg-transparent bg-[linear-gradient(to_right,#80808012_2px,transparent_1px),linear-gradient(to_bottom,#80808012_2px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
+      <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl bg-transparent">
         <h1
           ref={title}
-          className="flex  items-end scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl "
+          className="flex  items-end scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl bg-transparent "
         >
-          <LetterByLetterAnimation text="Ben GREGORY"/>
+          <LetterByLetterAnimation text="Ben GREGORY" />
           <Badge variant={"secondary"}>Docs</Badge>
         </h1>
         <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
           Bienvenue sur{" "}
-          <span
-            className="
-       font-bold
-      "
-          >
+          <span className="font-bold">
             Docs
           </span>
           , mon site où je partage mes expériences, mes projets, mes compétences
@@ -69,7 +65,7 @@ export default function Index() {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10"
+          className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10 bg-transparent"
         >
           <motion.div variants={cardVariants}>
             <Card className="lg:max-w-prose min-w-60  lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
@@ -115,8 +111,10 @@ export default function Index() {
             </Card>
           </motion.div>
         </motion.div>
+        {/* <div className="absolute inset-0 -z-20 h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div> */}
+
       </div>
-     
+
     </div>
   );
 }
