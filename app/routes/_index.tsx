@@ -29,7 +29,7 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none    bg-transparent bg-[linear-gradient(to_right,#80808012_2px,transparent_1px),linear-gradient(to_bottom,#80808012_2px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
+    <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none    bg-transparent bg-[linear-gradient(to_right,#80808012_2px,transparent_1px),linear-gradient(to_bottom,#80808012_2px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
       <div className="flex flex-col justify-center items-center w-full h-full p-3 rounded-none lg:max-w-3xl bg-transparent">
         <h1
           ref={title}
@@ -38,7 +38,7 @@ export default function Index() {
           <LetterByLetterAnimation text="Ben GREGORY" />
           <Badge variant={"secondary"}>Docs</Badge>
         </h1>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify bg-transparent ">
           Bienvenue sur{" "}
           <span className="font-bold">
             Docs
@@ -47,7 +47,7 @@ export default function Index() {
           et mes formations.
         </p>
 
-        <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify bg-transparent ">
           Ce site est aussi un projet personnel de prise en main du framework{" "}
           <a
             href="https://remix.run/"
@@ -65,10 +65,10 @@ export default function Index() {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="flex flex-row flex-wrap justify-center items-center w-full p-3 rounded-none   lg:my-10 bg-transparent"
+          className="flex flex-row flex-wrap justify-center items-center w-full p-3 gap-3 rounded-none   lg:my-10 bg-transparent"
         >
           <motion.div variants={cardVariants}>
-            <Card className="lg:max-w-prose min-w-60  lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
+            <Card className="lg:max-w-prose min-w-60  lg:w-64 lg:h-30  rounded-lg  hover:outline">
               <Link to="/about">
                 <CardContent className="flex flex-col justify-center items-center p-8">
                   <CardTitle>A propos de moi</CardTitle>
@@ -79,7 +79,7 @@ export default function Index() {
           </motion.div>
 
           <motion.div variants={cardVariants}>
-            <Card className="max-w-prose  min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg hover:outline">
+            <Card className="max-w-prose  min-w-60 lg:w-64 lg:h-30 rounded-lg hover:outline">
               <Link to="/experiences">
                 <CardContent className="flex flex-col justify-center items-center p-8">
                   <CardTitle>Expériences</CardTitle>
@@ -90,7 +90,7 @@ export default function Index() {
           </motion.div>
 
           <motion.div variants={cardVariants}>
-            <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
+            <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30  rounded-lg  hover:outline">
               <Link to="/projects">
                 <CardContent className="flex flex-col justify-center items-center p-8">
                   <CardTitle>Projets</CardTitle>
@@ -101,8 +101,8 @@ export default function Index() {
           </motion.div>
 
           <motion.div variants={cardVariants}>
-            <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30 m-2 rounded-lg  hover:outline">
-              <Link to="/experiences">
+            <Card className="max-w-prose min-w-60 lg:w-64 lg:h-30  rounded-lg  hover:outline">
+              <Link to="/skills">
                 <CardContent className="flex flex-col justify-center items-center p-8">
                   <CardTitle>Compétences</CardTitle>
                   <CardDescription>Ma stack technique</CardDescription>

@@ -137,7 +137,7 @@ export default function Projects() {
                 )}
               </div>
 
-              <p className="text-xl text-muted-foreground p-1">
+              <p className="text-xl text-muted-foreground p-1 lg:max-w-prose">
                 {project.subtitle}
               </p>
             </div>
