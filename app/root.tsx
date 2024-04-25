@@ -111,7 +111,7 @@ export function App() {
         <Sidebar />
 
         <div className="fixed top-5 right-5 flex justify-end p-2 z-50">
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
         <div className="w-5/6 flex-grow">
           <Outlet />
