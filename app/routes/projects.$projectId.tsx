@@ -8,37 +8,32 @@ import { Form, Link } from "@remix-run/react";
 import { ActionFunctionArgs, redirect } from "@remix-run/node";
 import { useEffect } from "react";
 
-export const loader = async ({ params }) => {
-    const supabaseURL = "https://oplyzkzywrzqngstylak.supabase.co";
-    const supabaseKEY = process.env.SUPABASE_KEY;
+export const loader = async ({ params }: { params: any }) => {
+  const supabaseURL = "https://oplyzkzywrzqngstylak.supabase.co";
+  const supabaseKEY = process.env.SUPABASE_KEY;
 
-    if (supabaseKEY === undefined || supabaseKEY === null) {
-        throw new Error("There was an error, missing API KEY");
-    }
-    const supabase = createClient(supabaseURL, supabaseKEY);
+  if (supabaseKEY === undefined || supabaseKEY === null) {
+    throw new Error("There was an error, missing API KEY");
+  }
+  const supabase = createClient(supabaseURL, supabaseKEY);
 
-    const { data: project } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("id", params.projectId)
-        .single();
+  const { data: project } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("id", params.projectId)
+    .single();
 
-    return { project: project };
+  return { project: project };
 };
 
-
-
-
 export const ProjectDetails = () => {
-    const { project }: { project: Project } = useLoaderData<typeof loader>();
+  const { project }: { project: Project } = useLoaderData<typeof loader>();
 
-    useEffect(() => {
-        console.log("LOADINNNNG")
-    })
+  useEffect(() => {
+    console.log("LOADINNNNG");
+  });
 
-    console.log(project)
+  console.log(project);
 
-    return (
-        <h1 className="text-white">QUOI</h1>
-    )
-}
+  return <h1 className="text-white">QUOI</h1>;
+};

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ProjectAdd from "./project-add";
 import ProjectButton from "./project-button";
+import { Badge } from "../ui/badge";
 
 const ProjectsHeader = ({ projects, setSelectedProject, user }: any) => {
   const containerVariants = {
@@ -19,14 +20,13 @@ const ProjectsHeader = ({ projects, setSelectedProject, user }: any) => {
 
   return (
     <motion.div
-    initial="hidden"
-    animate={"visible"}
-
+      initial="hidden"
+      animate={"visible"}
       variants={containerVariants}
-      className="flex flex-row sticky  z-50 lg:z-10 lg:static justify-center items-center w-full h-full p-3 space-x-4 rounded-none"
+      className="flex flex-row sticky  z-50 lg:z-10 lg:static justify-center items-center w-full h-full p-1 space-x-4 rounded-none"
     >
       {projects.map((currentProject: any, index: number) => (
-        <motion.div variants={buttonVariants}>
+        <motion.div variants={buttonVariants} className="w-full relative">
           <ProjectButton
             key={index}
             title={currentProject.name}
@@ -34,6 +34,11 @@ const ProjectsHeader = ({ projects, setSelectedProject, user }: any) => {
             project={currentProject}
             setProject={setSelectedProject}
           />
+          {currentProject.isNew ? (
+            <Badge className="absolute -top-3">New</Badge>
+          ) : (
+            <></>
+          )}
         </motion.div>
       ))}
       {user.authenticated ? <ProjectAdd /> : <></>}

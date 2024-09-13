@@ -30,8 +30,6 @@ export async function loader() {
 export default function Experiences() {
   const data = useLoaderData<typeof loader>();
 
-
-
   const containerVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
@@ -68,7 +66,7 @@ export function ErrorBoundary() {
   const error = useRouteError();
   console.error(error);
   return (
-    <html>
+    <main>
       <head>
         <title>Oh no!</title>
         <Meta />
@@ -79,6 +77,6 @@ export function ErrorBoundary() {
         <Scripts />
         The page failed to load. Please try again later.
       </body>
-    </html>
+    </main>
   );
 }

@@ -24,15 +24,21 @@ const SkillCategory = ({ array, title }: any) => {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div className="flex flex-col justify-start my-3" variants={containerVariants}>
+      <motion.div
+        className="flex flex-col justify-start my-3"
+        variants={containerVariants}
+      >
         {title}
         <p className="text-sm text-muted-foreground m-0">
           {stackTypeDescriptions[title]}
         </p>
       </motion.div>
 
-      <motion.div className="flex lg:flex-row space-x-3" variants={containerVariants}>
-        {array.map((skill, index) => (
+      <motion.div
+        className="flex lg:flex-row space-x-3"
+        variants={containerVariants}
+      >
+        {array.map((skill: any, index: number) => (
           <motion.div key={index} variants={skillVariants}>
             <Skill skill={skill} />
           </motion.div>

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
-import { stack_type } from "~/utils/stack_type";
+
 import SkillCategory from "~/components/skills/skill-category";
 import SkillCategoryMobile from "~/components/skills/skill-category-mobile";
-import { motion } from "framer-motion";
+
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { stack_type } from "../utils/stack_type.js";
 
 export async function loader() {
   const supabaseURL = "https://oplyzkzywrzqngstylak.supabase.co";
@@ -17,7 +18,6 @@ export async function loader() {
   const supabase = createClient(supabaseURL, supabaseKEY);
 
   const { data: skills } = await supabase.from("stack").select("*");
-
 
   const current_stack = skills?.filter((skill) => skill.isMainStack === true);
   const tools = skills?.filter((skill) => skill.type === stack_type.TOOLS);
@@ -90,8 +90,7 @@ const Skills = () => {
 
   return (
     <ScrollArea className="h-screen max-h-screen w-full  rounded-none overflow-scroll">
-    <div className="flex justify-center  items-center w-full p-3 ">
-       
+      <div className="flex justify-center  items-center w-full p-3 ">
         <div className="flex flex-col justify-center  ">
           <SkillCategory array={data.language} title={stack_type.LANGUAGE} />
           <SkillCategory array={data.frontend} title={stack_type.FRONTEND} />
@@ -99,10 +98,8 @@ const Skills = () => {
           <SkillCategory array={data.database} title={stack_type.DATABASE} />
           <SkillCategory array={data.tools} title={stack_type.TOOLS} />
         </div>
-       
-    </div>
+      </div>
     </ScrollArea>
-
   );
 };
 
