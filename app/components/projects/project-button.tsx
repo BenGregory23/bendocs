@@ -4,7 +4,15 @@ export default function ProjectButton(props: {
   title: string;
   id: number;
   setProject: any;
-  project: object;
+  project: {
+    id: number;
+    name: string;
+    subtitle: string;
+    description: string;
+    isNew: boolean;
+    created_at: string;
+    updated_at: string;
+  };
 }) {
   return (
     <Button
@@ -15,7 +23,7 @@ export default function ProjectButton(props: {
       {props.title}
 
       <p className="text-xs font-light text-muted-foreground bg-transparent">
-        {props.project.subtitle.substring(0, 30)}...
+        {props.project.subtitle.substring(0, 30).trimEnd()}...
       </p>
     </Button>
   );

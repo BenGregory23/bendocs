@@ -35,7 +35,7 @@ const ProjectsHeader = ({ projects, setSelectedProject, user }: any) => {
             setProject={setSelectedProject}
           />
           {currentProject.isNew ? (
-            <Badge className="absolute -top-3">New</Badge>
+            <Badge className="absolute -top-2 -left-1">New</Badge>
           ) : (
             <></>
           )}
