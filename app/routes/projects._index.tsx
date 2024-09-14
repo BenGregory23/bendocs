@@ -40,7 +40,7 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col lg:h-screen w-full justify-center items-center rounded-none ">
-      <div className="flex flex-row sticky z-50 lg:z-10 lg:static justify-center items-center w-full lg:min-h-24 h-fit p-2 space-x-4 border-b rounded-none">
+      <div className="flex flex-row sticky z-50 lg:z-10 lg:static justify-center items-center w-full lg:min-h-24 h-fit  space-x-4 border-b rounded-none bg-red-500">
         {isMobile ? (
           <ProjectsHeaderMobile
             projects={projects}
