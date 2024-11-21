@@ -16,29 +16,30 @@ export default function About() {
             </h2>
           </div>
 
-          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-pretty ">
             Je suis un développeur web passionné. Fort de deux années
             d'expériences dans le domaine du développement, j'ai eu
             l'opportunité de travailler sur des projets variés, allant de la
             création de sites web interactifs à la conception d'applications
             robustes.
           </p>
-          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
-            Je suis spécialisé en React pour le frontend et Javascript/Java pour
-            le backend, et je suis constamment en quête d'apprentissage pour
-            rester à la pointe de la technologie. Je travaille actuellement chez{" "}
+          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-pretty ">
+            Je maitrise plusieurs technologies et frameworks, tels que React,
+            Vue. Avec une préférence pour Vue ces derniers temps. Niveau backend
+            j'utilise le plus souvent Javascript/Java. Je suis constamment en
+            quête d'apprentissage pour rester à la pointe de la technologie. Je
+            travaille actuellement chez{" "}
             <a
               className="text-accentGreen underline"
               target="_blank"
               rel="noreferrer"
-              href="https://abrege.co"
+              href="https://Corben.fr"
             >
-              Abrege
+              Corben
             </a>{" "}
-            entreprise située à Poitiers, en tant que développeur fullstack à
-            Tours (en full remote depuis peu).
+            en tant que développeur fullstack à Tours (en full remote).
           </p>
-          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-justify ">
+          <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-prose text-pretty ">
             En dehors du développement, j'ai une passion pour l'escalade, les
             jeux vidéo (surtout compétitifs), et je suis un fervent fan de
             Formule 1. Mon objectif à court terme est de maîtriser le langage{" "}
